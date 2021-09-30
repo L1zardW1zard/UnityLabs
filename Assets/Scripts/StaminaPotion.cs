@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HpPotion : MonoBehaviour
+public class StaminaPotion : MonoBehaviour
 {
-    [SerializeField] private float hpAmount = 25f;
+    [SerializeField] private float staminaRecoveryAmount;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,13 +17,13 @@ public class HpPotion : MonoBehaviour
 
         if (player != null)
         {
-            if (player.HP < player.MaxHP - hpAmount)
+            if (player.Stamina < player.MaxStamina - staminaRecoveryAmount)
             {
-                player.Stamina += hpAmount;
-                
-            }else if (player.HP > player.MaxHP - hpAmount)
+                player.Stamina += staminaRecoveryAmount;
+                Destroy(gameObject);
+            }else if (player.Stamina > player.MaxStamina - staminaRecoveryAmount)
             {
-                player.HP = player.MaxHP;
+                player.Stamina = player.MaxStamina;
                 Destroy(gameObject);
             }
         }

@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class Gem : MonoBehaviour
 {
-    void Start()
-    {
-        
-    }
-
     private void OnTriggerEnter2D(Collider2D other)
     {
         Player player = other.gameObject.GetComponent<Player>();

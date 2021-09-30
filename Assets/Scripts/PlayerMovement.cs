@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private SpriteRenderer playerSprite;
 
     [SerializeField] private Animator _animator;
+    [SerializeField] private Player _player;
     
     private Rigidbody2D playerRB;
     private bool canJump;
@@ -25,9 +26,12 @@ public class PlayerMovement : MonoBehaviour
     private float directionX = 0f;
     private float directionY = 0f;
 
+
+
     // Start is called before the first frame update
     void Start()
     {
+        Player _player = gameObject.GetComponent<Player>();
         playerRB = GetComponent<Rigidbody2D>();
     }
 
@@ -64,6 +68,12 @@ public class PlayerMovement : MonoBehaviour
             _animator.SetBool("isCrouching",headCollider.enabled);
             headCollider.enabled = !headCollider.enabled;
         }
-        
+
+        if (Input.GetKeyDown(KeyCode.LeftShift) && _player.Stamina >= 10)
+        {
+            Debug.Log("*Dash Motion*");
+            _player.Stamina -= 20;
+        }
+
     }
 }

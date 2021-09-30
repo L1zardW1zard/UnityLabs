@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class ElderScroll : MonoBehaviour
 {
+    [SerializeField] Text missionCompleteText;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,8 +18,11 @@ public class ElderScroll : MonoBehaviour
 
         if (player != null)
         {
+            player.isScrollFound = true;
             Debug.Log("Fus-Ro-Dah!!!");
             Destroy(gameObject);
+            missionCompleteText.enabled = true;
         }
     }
+    
 }
