@@ -19,8 +19,8 @@ public class HpPotion : MonoBehaviour
         {
             if (player.HP < player.MaxHP - hpAmount)
             {
-                player.Stamina += hpAmount;
-                
+                player.HP += hpAmount;
+                Destroy(gameObject);
             }else if (player.HP > player.MaxHP - hpAmount)
             {
                 player.HP = player.MaxHP;

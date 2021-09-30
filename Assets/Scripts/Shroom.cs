@@ -17,7 +17,7 @@ public class Shroom : MonoBehaviour
 
     private bool arrowMovingUp;
     //private bool timerStarted = false;
-    public float timeLeft = 0.5f;
+    //public float timeLeft = 0.5f;
     
     // Start is called before the first frame update
     void Start()
@@ -65,7 +65,7 @@ public class Shroom : MonoBehaviour
                     Debug.Log("Player ate shroom");
                     Debug.Log("Player hp before: " + player.HP);
                     Destroy(gameObject);
-                    float shroomHPEffect = Random.Range(-5, 5);
+                    float shroomHPEffect = Random.Range(-15, 15);
                     player.HP += shroomHPEffect;
                     Debug.Log("Player hp after: " + player.HP);
                 }

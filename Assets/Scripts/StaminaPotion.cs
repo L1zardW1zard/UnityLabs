@@ -17,7 +17,7 @@ public class StaminaPotion : MonoBehaviour
 
         if (player != null)
         {
-            if (player.Stamina < player.MaxStamina - staminaRecoveryAmount)
+            if (player.Stamina <= player.MaxStamina - staminaRecoveryAmount)
             {
                 player.Stamina += staminaRecoveryAmount;
                 Destroy(gameObject);
@@ -25,6 +25,9 @@ public class StaminaPotion : MonoBehaviour
             {
                 player.Stamina = player.MaxStamina;
                 Destroy(gameObject);
+            }else if (player.Stamina == player.MaxStamina)
+            {
+                
             }
         }
     }
