@@ -16,9 +16,9 @@ public class StoneProj : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other)
     {
         Player player = other.gameObject.GetComponent<Player>();
-        Destroy(gameObject);
         if (player != null)
         {
+            Destroy(gameObject);
             player.TakeDamage(_damage,_knockbackPower,transform.position.x);
         }
     }

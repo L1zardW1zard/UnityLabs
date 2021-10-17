@@ -136,3 +136,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destroyAfterTime: 3
   _damage: 15
+  _knockbackPower: 5
