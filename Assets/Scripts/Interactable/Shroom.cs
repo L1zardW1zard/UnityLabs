@@ -10,19 +10,13 @@ public class Shroom : MonoBehaviour
     [SerializeField] private Player playerObjReference;
     [SerializeField] private SpriteRenderer arrowAbove;
 
-    // private float arrowStarterPosition;
-    // private float arrowCurrentPosition;
-    
     private bool inRange;
 
     private bool arrowMovingUp;
-    //private bool timerStarted = false;
-    //public float timeLeft = 0.5f;
-    
+
     // Start is called before the first frame update
     void Start()
     {
-        //arrowStarterPosition = transform.position.y;
         arrowAbove.enabled = false;
         InvokeRepeating(nameof(ChangeArrowMoveDirection),1f,0.5f);
     }
@@ -37,23 +31,10 @@ public class Shroom : MonoBehaviour
     {
         if (inRange)
         {
-            //arrowCurrentPosition = arrowAbove.transform.position.y;
             arrowAbove.enabled = true;
 
-            // if (arrowAbove.transform.position.y > arrowStarterPosition + 1f)  // Не очень удачная попытка сделать анимацию стрелки
-            //     arrowCurrentPosition = arrowStarterPosition;
-            //     
-            //
-            // if (arrowMovingUp)
-            // {
-            //     arrowAbove.transform.Translate(0, 0.005f, 0);
-            // }
-            // else
-            // {
-            //     arrowAbove.transform.Translate(0,-0.005f,0);
-            // }
-            
             Debug.Log("InRange");
+            IDamagable gamagableObject = playerObjReference.GetComponent<IDamagable>();
             Player player = playerObjReference.GetComponent<Player>();
             if (player != null && Input.GetKeyDown(KeyCode.E))
             {
@@ -63,11 +44,8 @@ public class Shroom : MonoBehaviour
                 if (hit.collider.name == "shrooms")
                 {
                     Debug.Log("Player ate shroom");
-                    Debug.Log("Player hp before: " + player.currentHp);
+                    player.TakeDamage(5,0,0);
                     Destroy(gameObject);
-                    float shroomHPEffect = Random.Range(-15, 15);
-                    player.currentHp += shroomHPEffect;
-                    Debug.Log("Player hp after: " + player.currentHp);
                 }
             }
         }

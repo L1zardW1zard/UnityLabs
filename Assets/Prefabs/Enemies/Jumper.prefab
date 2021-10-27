@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6860673339445370624}
   - component: {fileID: 6860673339445370627}
   - component: {fileID: 6860673339445370630}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 6860673339702254587}
   - component: {fileID: 6860673339702254585}
   - component: {fileID: 6860673339702254584}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -202,7 +202,7 @@ GameObject:
   - component: {fileID: 6860673339935946931}
   - component: {fileID: 6860673339935946932}
   - component: {fileID: 6860673339935946935}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Jumper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -369,7 +369,6 @@ MonoBehaviour:
   groundCheck: {fileID: 6860673341353760851}
   groundCheckRadius: 0.01
   _slider: {fileID: 6860673340847615428}
-  _enemySystem: {fileID: 0}
   _jumpStartAnimationName: jumpStarted
   _jumpAnimationName: Jump
   _isGroundedAnimationName: isGrounded
@@ -385,7 +384,7 @@ GameObject:
   - component: {fileID: 6860673340546750837}
   - component: {fileID: 6860673340546750827}
   - component: {fileID: 6860673340546750826}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -458,7 +457,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6860673340641983358}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -495,7 +494,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6860673340847615429}
   - component: {fileID: 6860673340847615428}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: HpBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -583,7 +582,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6860673341353760851}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}

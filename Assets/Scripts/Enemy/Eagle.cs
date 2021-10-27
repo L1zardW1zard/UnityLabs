@@ -82,7 +82,6 @@ public class Eagle : MonoBehaviour
     {
         Collider2D player = Physics2D.OverlapBox(transform.position, new Vector2(_attackRange, 1), 0, _whatIsPlayer);
         yield return new WaitForSeconds(_attackCooldown);
-        Debug.Log("Pewpew");
         Rigidbody2D _proj = Instantiate(_projRB, _projStartingPos.position, Quaternion.identity);
         _proj.velocity = _projectileSpeed * transform.forward;
     }

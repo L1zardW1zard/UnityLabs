@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HpPotion : MonoBehaviour
 {
-    [SerializeField] private float hpAmount = 25f;
+    [SerializeField] private int hpAmount = 25;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,15 +17,7 @@ public class HpPotion : MonoBehaviour
 
         if (player != null)
         {
-            if (player.currentHp < player.MaxHP - hpAmount)
-            {
-                player.currentHp += hpAmount;
-                Destroy(gameObject);
-            }else if (player.currentHp > player.MaxHP - hpAmount)
-            {
-                player.currentHp = player.MaxHP;
-                Destroy(gameObject);
-            }
+            player.HealDamage(hpAmount);
         }
     }
 }

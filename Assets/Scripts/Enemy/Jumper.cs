@@ -4,29 +4,17 @@ using UnityEngine.UI;
 
 public class Jumper : MonoBehaviour
 {
-    [SerializeField] private int _maxHp;
     [SerializeField] private int _damage;
     [SerializeField] private int _knockbackPower;
     [SerializeField] private float _attackRange;
     [SerializeField] private float _attackCooldown;
     [SerializeField] private LayerMask _whatIsPlayer;
-    [SerializeField]private bool _faceRight;
+    [SerializeField] private bool _faceRight;
     [SerializeField] private LayerMask whatIsGround;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private float groundCheckRadius = 0.1f;
     [SerializeField] private Slider _slider;
-    [SerializeField] private GameObject _enemySystem;
-    private int _currentHp;
-
-    private int CurrentHp
-    {
-        get => _currentHp;
-        set
-        {
-            _currentHp = value;
-            _slider.value = value;
-        }
-    }
+    
 
     [Header("Animation")]
     [SerializeField] private string _jumpStartAnimationName;
@@ -46,8 +34,6 @@ public class Jumper : MonoBehaviour
 
     private void Start()
     {
-        _slider.maxValue = _maxHp;
-        CurrentHp = _maxHp;
         _rigidbody = gameObject.GetComponent<Rigidbody2D>();
         _lastAttackTime = Time.time;
     }
@@ -120,12 +106,5 @@ public class Jumper : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int damage)
-    {
-        CurrentHp -= damage;
-        if(CurrentHp <= 0)
-        {
-            Destroy(gameObject);
-        }
-    }
+
 }

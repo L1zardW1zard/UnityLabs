@@ -1,7 +1,8 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
-public class StoneProj : MonoBehaviour
+public class PlayerStoneProj : MonoBehaviour
 {
     [SerializeField] private float _destroyAfterTime;
     [SerializeField] private int _damage;
@@ -20,7 +21,7 @@ public class StoneProj : MonoBehaviour
         
         if (enemyObject != null)
         {
-            if (other.gameObject.GetComponent<Player>() != null)
+            if (other.gameObject.GetComponent<Player>() == null)
             {
                 enemyObject.TakeDamage(_damage,_knockbackPower,transform.position.x);
                 Destroy(gameObject);

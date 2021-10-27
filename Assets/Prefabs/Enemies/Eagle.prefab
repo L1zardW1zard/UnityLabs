@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1397409932717540170}
   - component: {fileID: 1397409932717540171}
   - component: {fileID: 960373926506282080}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Eagle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -170,7 +170,7 @@ MonoBehaviour:
   _rigidbody2D: {fileID: 1397409932717540171}
   _speed: 2.5
   _faceRight: 1
-  _proj: {fileID: 7462974714487248655, guid: 8e0b77db6e6153348b10ef2ea196d8fb, type: 3}
+  _projRB: {fileID: 0}
   _projStartingPos: {fileID: 8324552152630394356}
   _projectileSpeed: 6
   _attackCooldown: 1
@@ -186,7 +186,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8324552152630394356}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ProjStartingPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RangedAlien : MonoBehaviour
 {
@@ -7,7 +8,8 @@ public class RangedAlien : MonoBehaviour
     [SerializeField] private LayerMask _whatIsPlayer;
     [SerializeField] private Rigidbody2D _bullet;
     [SerializeField] private Transform _muzzle;
-    [SerializeField]private bool _faceRight;
+    [SerializeField] private bool _faceRight;
+    [SerializeField] private Slider _slider;
     
 
     [Header("Animation")]
@@ -35,7 +37,6 @@ public class RangedAlien : MonoBehaviour
         }
         return false;
     }
-    
 
     private void StartShoot(Vector2 playerPosition)
     {
@@ -54,7 +55,4 @@ public class RangedAlien : MonoBehaviour
          _animator.SetBool(_shootAnimationName,false);
          Invoke(nameof(CheckIfCanShoot),1f);
      }
-    
-    
-
 }

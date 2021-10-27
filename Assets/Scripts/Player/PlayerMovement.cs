@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     
     [SerializeField] private BoxCollider2D headCollider;
     [SerializeField] private SpriteRenderer playerSprite;
+    [SerializeField] bool _faceRight;
 
     [SerializeField] private Animator _animator;
     [SerializeField] private Player _player;
@@ -33,7 +34,6 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Player _player = gameObject.GetComponent<Player>();
         playerRB = GetComponent<Rigidbody2D>();
     }
 
@@ -48,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            if (canJump && Time.time - _player._lastTimeHit > 0.2f)
+            if (canJump && Time.time - _player.lastTimeHit > 0.2f)
             {
                 _animator.SetBool(animatorHurtName,false);
             }
@@ -64,13 +64,18 @@ public class PlayerMovement : MonoBehaviour
             _animator.SetFloat("speed",Mathf.Abs(directionX));
             _animator.SetBool("isGrounded",canJump);
 
-            if (directionX < 0)
+            
+            if (directionX < 0 && _faceRight)
             {
-                playerSprite.flipX = true;
+                _faceRight = false;
+                transform.Rotate(0,180,0);
+                //playerSprite.flipX = true;
             }
-            else if (directionX > 0)
+            else if (directionX > 0 && !_faceRight)
             {
-                playerSprite.flipX = false;
+                _faceRight = true;
+                transform.Rotate(0,180,0);
+                //playerSprite.flipX = false;
             }
 
             if (Input.GetKeyDown(KeyCode.Space) && canJump)
@@ -89,7 +94,7 @@ public class PlayerMovement : MonoBehaviour
                 Debug.Log("*Dash Motion*");
                 _player.Stamina -= 20;
             }
+            
         }
-        
     }
 }
